@@ -12,7 +12,7 @@
 // #include "AudioLibs/MaximilianDSP.h"
 // #include "libs/maxim.h"
 
-static LGFX_ESP32_ST7735 lcd;                 // LGFXのインスタンスを作成。
+static LGFX_ESP32_ST7735 lcd;
 static int count = 0;
 
 SPIClass spiSD(HSPI);
@@ -26,9 +26,7 @@ SPIClass spiSD(HSPI);
 #define I2S_BCLK      26
 #define I2S_LRC       25
 
-// ボタン入力ピン
 const int BTN1 = 16;
-// カウント数
 int btnPushCnt = 1; 
 
 //Audio audio;
@@ -134,8 +132,6 @@ void setup(void)
     lcd.setTextColor(TFT_BLACK, TFT_WHITE);
     lcd.startWrite();
     lcd.println("HelloWorld");
-    lcd.println("こんにちは世界");
-    lcd.println("うーたん");
     // 固定領域の描画
     //lcd.drawString("Temp", 100, 160);
     //lcd.drawString("Humd", 100, 128);
@@ -286,7 +282,5 @@ void loop(void)
         }
     }
     btn1statusBack = btn1status;
-
-    //delay(50);  // 0.05秒待ち
 }
 
